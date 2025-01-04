@@ -22,3 +22,13 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.main{
+    width:100%;
+    height: calc(100vh - 60px);
+    background-image: linear-gradient(to bottom right, #1B356F, #413C78, #6A4182, #804489, #A04A90, #A64C94);
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap:20px;
+}
