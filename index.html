@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <title>Todo App</title>
   </head>
   <body>
@@ -12,11 +16,20 @@
       <div class="main">
         <div class="box" id="todo">
           <div class="header">Todo</div>
-          <div class="card"></div>
+          <div class="card">
+            <p>learn react</p>
+            <i class="fa fa-check-circle green"></i>
+          </div>
         </div>
-        <div class="box" id="progress"></div>
-        <div class="box" id="review"></div>
-        <div class="box" id="Done"></div>
+        <div class="box" id="progress">
+          <div class="header">In Progress</div>
+        </div>
+        <div class="box" id="review">
+          <div class="header">Review</div>
+        </div>
+        <div class="box" id="Done">
+          <div class="header">Done</div>
+        </div>
       </div>
     </div>
     <script src="./Js/main.js"></script>
