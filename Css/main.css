@@ -16,11 +16,16 @@
     background-image: linear-gradient(to right, #102655, #162856, #1E2956, #262B58, #2D2C5A, #342E5E, #3A2F5E, #3D2E5F, #423060, #4B3163);
     color: #FDFFFF;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
     padding: 10px 30px;
     display:flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+}
+
+.plus{
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .main{
