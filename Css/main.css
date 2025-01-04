@@ -35,9 +35,52 @@
 
 .box{
     width:300px;
-    min-height: 250px;
+    min-height: 200px;
+    height:max-content;
+    max-height: 480px;
+    /* overflow-x: hidden; */
+    /* overflow-y: scroll; */
     background-color: #eceeee;
     border-radius: 10px;
-    padding:10px 16px;
+    padding:0 16px 16px 16px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:10px;
+}
+
+.header{
+    align-self: flex-start;
     color:#1B314D;
+    padding: 12px 0;
+    font-weight: 600;
+}
+.card{
+    width:280px;
+    height:60px;
+    background-color: #ffffff;
+    color:#5c5b5b;
+    border-radius: 10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.grey{
+    color:#b3b0b0;
+    font-size: 18px;
+
+}
+
+.blue{
+    color:#5adaeb;
+    font-size: 18px;
+
+}
+
+.green{
+    color:#45f835;
+    font-size: 18px;
 }
