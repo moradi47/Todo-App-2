@@ -4,7 +4,6 @@ let modal = document.querySelector('.modal');
 let closeIcon = document.querySelector('.close');
 let addBtn = document.querySelector('.addBtn');
 let inputElem = document.querySelector('.new-todo') ;
-let containerTodo = document.querySelector('#todo');
 let contentModal = document.querySelector('.modal-content');
 let todoBox = document.getElementById('todo');
 let progressBox = document.getElementById('progress');
@@ -129,10 +128,16 @@ function AddNewTodo(){
         newCard.append(containerIcons);
         newCard.addEventListener('dragstart', dargHandler);
 
-        containerTodo.append(newCard);
+        todoBox.append(newCard);
     }
     inputElem.value = '';
     closeModal();
+}
+
+function addTodoWithEnterBtn(event){
+    if(event.key === 'Enter'){
+        AddNewTodo();
+    }
 }
 
 addIcon.addEventListener('click',openModal);
@@ -153,3 +158,5 @@ reviewBox.addEventListener('drop', dropToProgressHandler);
 
 doneBox.addEventListener('dragover', dragOverHandler);
 doneBox.addEventListener('drop', dropToDoneHandler);
+
+inputElem.addEventListener('keydown', addTodoWithEnterBtn);
