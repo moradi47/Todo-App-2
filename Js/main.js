@@ -5,9 +5,8 @@ let closeIcon = document.querySelector('.close');
 let addBtn = document.querySelector('.addBtn');
 let inputElem = document.querySelector('.new-todo') ;
 let containerTodo = document.querySelector('#todo');
+let contentModal = document.querySelector('.modal-content');
 
-
-// console.log(containerTodo);
 
 function openModal(){
 
@@ -21,6 +20,10 @@ function closeModal(){
     modal.style.display = 'none';
     containerDiv.style.filter = 'Blur(0px)';
 
+}
+
+function notCloseModal(event){
+    event.stopPropagation();
 }
 
 function AddNewTodo(){
@@ -40,9 +43,13 @@ function AddNewTodo(){
 
         containerTodo.append(newCard);
     }
+    inputElem.value = '';
     closeModal();
 }
 
 addIcon.addEventListener('click',openModal);
 closeIcon.addEventListener('click', closeModal);
 addBtn.addEventListener('click', AddNewTodo);
+contentModal.addEventListener('click', notCloseModal);
+modal.addEventListener('click', closeModal);
+
