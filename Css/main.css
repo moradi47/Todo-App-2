@@ -73,6 +73,13 @@
     padding: 0 10px;
 }
 
+.container-icon{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:10px;
+}
+
 .grey{
     color:#b3b0b0;
     font-size: 18px;
@@ -87,6 +94,11 @@
 
 .green{
     color:#45f835;
+    font-size: 18px;
+}
+
+.red{
+    color:rgb(250, 7, 7);
     font-size: 18px;
 }
 
