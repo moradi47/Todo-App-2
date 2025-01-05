@@ -103,15 +103,23 @@ function AddNewTodo(){
         
         let newCard = document.createElement('div');
         let newP = document.createElement('p');
-        newP.innerHTML = inputElem.value;
+        let containerIcons = document.createElement('div');
         let iconCheck = document.createElement('i');
+        let iconClose = document.createElement('i');
+
         iconCheck.setAttribute('class','fa fa-check-circle gray');
+        iconClose.setAttribute('class', 'fa fa-times-circle red');
+        newP.innerHTML = inputElem.value;
+
+        containerIcons.classList.add('container-icon');
         newCard.classList.add('card');
         newCard.setAttribute('draggable', 'true');
         newCard.setAttribute('id', inputElem.value);
 
+        containerIcons.append(iconCheck);
+        containerIcons.append(iconClose);
         newCard.append(newP);
-        newCard.append(iconCheck);
+        newCard.append(containerIcons);
         newCard.addEventListener('dragstart', dargHandler);
 
         containerTodo.append(newCard);
