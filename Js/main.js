@@ -45,14 +45,14 @@ function dropToProgressHandler(event){
 
     let targetId = event.dataTransfer.getData('elemId');
     let targetElem = document.getElementById(targetId);
-    let className = targetElem.lastChild.className;
+    let className = targetElem.lastChild.firstChild.className;
 
     if(className === 'fa fa-check-circle green' || className === 'fa fa-check-circle gray'){
 
-        targetElem.lastChild.classList.remove('green');
-        targetElem.lastChild.classList.remove('gray');
+        targetElem.lastChild.firstChild.classList.remove('green');
+        targetElem.lastChild.firstChild.classList.remove('gray');
         
-        targetElem.lastChild.classList.add('blue');
+        targetElem.lastChild.firstChild.classList.add('blue');
     }
 
     event.target.append(targetElem);
@@ -64,38 +64,44 @@ function dropToDoneHandler(event){
 
     let targetId = event.dataTransfer.getData('elemId');
     let targetElem = document.getElementById(targetId);
-    let className = targetElem.lastChild.className;
+    let className = targetElem.lastChild.firstChild.className;
 
     if(className === 'fa fa-check-circle blue' || className === 'fa fa-check-circle gray'){
 
-        targetElem.lastChild.classList.remove('blue');
-        targetElem.lastChild.classList.remove('gray');
+        targetElem.lastChild.firstChild.classList.remove('blue');
+        targetElem.lastChild.firstChild.classList.remove('gray');
         
-        targetElem.lastChild.classList.add('green');
+        targetElem.lastChild.firstChild.classList.add('green');
     }
 
     event.target.append(targetElem);
-
+   
 }
 
 function dropToTodoHandler(event){
 
     let targetId = event.dataTransfer.getData('elemId');
     let targetElem = document.getElementById(targetId);
-    let className = targetElem.lastChild.className;
+    let className = targetElem.lastChild.firstChild.className;
 
     if(className === 'fa fa-check-circle blue' || className === 'fa fa-check-circle green'){
 
-        targetElem.lastChild.classList.remove('blue');
-        targetElem.lastChild.classList.remove('green');
+        targetElem.lastChild.firstChild.classList.remove('blue');
+        targetElem.lastChild.firstChild.classList.remove('green');
         
-        targetElem.lastChild.classList.add('gray');
+        targetElem.lastChild.firstChild.classList.add('gray');
     }
     event.target.append(targetElem);
 
 }
 
 //function for AddTodo
+
+function deleteIcon(event){
+
+    event.target.parentElement.parentElement.remove();
+
+}
 
 function AddNewTodo(){
 
@@ -109,8 +115,9 @@ function AddNewTodo(){
 
         iconCheck.setAttribute('class','fa fa-check-circle gray');
         iconClose.setAttribute('class', 'fa fa-times-circle red');
+        iconClose.addEventListener('click', deleteIcon);
         newP.innerHTML = inputElem.value;
-
+    
         containerIcons.classList.add('container-icon');
         newCard.classList.add('card');
         newCard.setAttribute('draggable', 'true');
