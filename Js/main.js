@@ -5,6 +5,7 @@ let closeIcon = document.querySelector('.close');
 let addBtn = document.querySelector('.addBtn');
 let inputElem = document.querySelector('.new-todo') ;
 let contentModal = document.querySelector('.modal-content');
+let contentCard = document.querySelector('.content')
 let todoBox = document.getElementById('todo');
 let progressBox = document.getElementById('progress');
 let reviewBox = document.getElementById('review');
@@ -128,7 +129,7 @@ function AddNewTodo(){
         newCard.append(containerIcons);
         newCard.addEventListener('dragstart', dargHandler);
 
-        todoBox.append(newCard);
+        contentCard.append(newCard);
     }
     inputElem.value = '';
     closeModal();
